@@ -38,6 +38,10 @@ public class Bus {
         System.out.println("Jumlah penumpang Prioritas " + jumlahPenumpangPrioritas);
         return jumlahPenumpangPrioritas;
     }
+    
+    public int totalPenumpang(){
+        return penumpangBiasa.size() + penumpangPrioritas.size();
+    }
 
     public boolean naikPenumpang(Penumpang penumpang){
         if ((penumpangPrioritas.size() < 2) && (penumpang.getUmur() < 10 || penumpang.getUmur() > 60) || (penumpang.getHamil() == true) ) {
@@ -101,10 +105,10 @@ public class Bus {
             System.out.println("daftar Nama Penumpang Prioritas = " + namaPenumpangPrioritas);
         }
 
-        System.out.println("jumlah Semua Penumpang Adalah = " +penumpangBiasa.size() + penumpangPrioritas.size());
+        System.out.println("jumlah Semua Penumpang Adalah = " +totalPenumpang());
 
         return "daftar nama penumpang biasa = " + namaPenumpangBiasa + "daftar nama penumpang prioritas = " + namaPenumpangPrioritas
-        + "jumlah1 semua penumpang = " + penumpangBiasa.size() + penumpangPrioritas.size();
+        + "jumlah1 semua penumpang = " + totalPenumpang();
     }
         
 }
